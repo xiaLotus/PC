@@ -1,0 +1,82 @@
+# 🚀 快速開始
+
+## 方法一：使用啟動腳本（最簡單）
+
+### Windows 用戶
+1. 雙擊 `啟動.bat`
+2. 瀏覽器打開 http://127.0.0.1:5000
+
+### Mac/Linux 用戶
+1. 在終端機執行：
+   ```bash
+   ./啟動.sh
+   ```
+2. 瀏覽器打開 http://127.0.0.1:5000
+
+## 方法二：手動啟動
+
+### 1. 安裝 Flask
+```bash
+pip install Flask
+```
+
+### 2. 運行
+```bash
+python app.py
+```
+
+### 3. 訪問
+瀏覽器打開：http://127.0.0.1:5000
+
+## ⚠️ 如果遇到錯誤
+
+### "ModuleNotFoundError: No module named 'flask'"
+解決方法：
+```bash
+pip install Flask
+```
+
+### "Address already in use"
+解決方法：
+- 關閉其他佔用 5000 port 的程式
+- 或修改 `app.py` 最後一行的 port 參數
+
+### 題目無法載入
+確認 `questions.json` 與 `app.py` 在同一目錄
+
+## 📁 檔案說明
+
+```
+quiz_system/
+├── 啟動.bat          # Windows 啟動腳本
+├── 啟動.sh           # Linux/Mac 啟動腳本
+├── app.py            # Flask 後台（主程式）
+├── questions.json    # 題庫數據
+├── requirements.txt  # Python 套件清單
+├── README.md         # 完整說明文件
+├── 快速開始.txt      # 本文件
+├── static/
+│   ├── style.css    # 網頁樣式
+│   └── script.js    # 前端邏輯
+└── templates/
+    └── index.html   # 網頁模板
+```
+
+## 🎯 使用流程
+
+1. 啟動系統（執行上述步驟）
+2. 瀏覽器訪問 http://127.0.0.1:5000
+3. 點擊「開始測驗」
+4. 系統隨機抽取 IT 1題 + 軟體 1題
+5. 閱讀提示並填寫答案
+6. 點擊「提交答案」
+7. 查看分數與詳細比對
+8. 可點擊「重新測驗」進行新一輪
+
+## 💡 自訂題庫
+
+編輯 `questions.json` 即可修改題目內容
+
+## 📞 停止伺服器
+
+在終端機按 `Ctrl + C`

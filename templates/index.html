@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>維運組術科考試系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 維運組術科考試系統</h1>
+        
+        <!-- 開始畫面 -->
+        <div id="startScreen" class="start-screen">
+            <p class="info-text">本次測驗將從 IT 類別抽 1 題、軟體類別抽 1 題<br>請仔細閱讀提示後作答</p>
+            <button class="start-btn" onclick="startQuiz()">開始測驗</button>
+        </div>
+        
+        <!-- 測驗畫面 -->
+        <div id="quizScreen" class="hidden">
+            <div id="questionsContainer"></div>
+            <button class="submit-btn" onclick="submitAnswers()">提交答案</button>
+        </div>
+        
+        <!-- 結果畫面 -->
+        <div id="resultScreen" class="hidden result-screen">
+            <h2>測驗結果</h2>
+            <div class="score-display" id="scoreDisplay"></div>
+            <div class="score-message" id="scoreMessage"></div>
+            <div class="result-details" id="resultDetails"></div>
+            <button class="retry-btn" onclick="location.reload()">重新測驗</button>
+        </div>
+        
+        <!-- 載入中 -->
+        <div id="loading" class="hidden loading">
+            <div class="spinner"></div>
+            <p>處理中...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
